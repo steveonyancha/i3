@@ -98,7 +98,6 @@ set $term "1. Term"
 set $browser "2. Browser"
 set $editor "3. Editor"
 set $file "4. File"
-set $reader "5. Reader"
 set $music "10. Music"
 
 # switch to workspace
@@ -106,46 +105,24 @@ bindsym $mod+1 workspace $term
 bindsym $mod+2 workspace $browser
 bindsym $mod+3 workspace $editor
 bindsym $mod+4 workspace $file
-bindsym $mod+5 workspace $reader
+bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace $music
 
-
-
-#bindsym $mod+Shift+d exec ranger
-
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $term
 bindsym $mod+Shift+2 move container to workspace $browser
 bindsym $mod+Shift+3 move container to workspace $editor
 bindsym $mod+Shift+4 move container to workspace $file
-bindsym $mod+Shift+5 move container to workspace $reader
+bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $music
-
-#Terminal
-assign [class="XTerm"] $term
-assign [class="Gnome-terminal"] $term
-
-#Browser
-assign [class="Firefox"] $browser
-assign [class="Chromium"] $browser
-
-#editor
-assign [class="kate"] $editor
-
-#reader
-assign [class="Fbreader"] $reader
-assign [class="Okular"] $reader
-#File
-
-
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -223,12 +200,3 @@ bar {
 bindsym Print exec gnome-screenshot -i 
 #crop-area screenshot by pressing Mod + printscreen
 bindsym $mod+Print exec gnome-screenshot -a
-
-exec gnome-terminal
-exec xterm -bd white -bc -bg black -fg skyblue  -fa 'Terminus Regular' -fs 9 +pc
-exec firefox
-exec chromium 
-exec kate
-exec fbreader
-exec always feh --bg-scale KDE\ Plasma\ Scenery\ 37.png
-exec Okular
